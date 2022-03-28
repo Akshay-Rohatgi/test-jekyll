@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "Tech Talk 2 Takeaways"
+categories: jekyll update
+---
+
+In the Tech Talk 1 Challenge first required me to build my own Stack and Queue classes, I would later use these to complete the other challenges. 
+
+[Stack.java](https://github.com/Akshay-Rohatgi/AP-CSA-T3/blob/main/Stack.java):
+- Created an ArrayList 
+- Created methods `add`, `pop`, `peak`, `length`, `clear`, and `display`
+
+[Queue.java](https://github.com/Akshay-Rohatgi/AP-CSA-T3/blob/main/Queue.java)
+- Similar to Stack
+
+[Challenge 1](https://github.com/Akshay-Rohatgi/AP-CSA-T3/blob/main/tt1chall1.java)
+- Pretty simple operations
+- Formatting the result was a challenge, you can view how I did it below:
+{% highlight java %}
+System.out.println("Words count: " + nq.length() + " " + nq.display().toString().replaceAll("\\]", "").replaceAll("\\[", "").replaceAll(" "," ").replaceAll(",", " "));
+{% endhighlight %}
+
+[Challenge 2](https://github.com/Akshay-Rohatgi/AP-CSA-T3/blob/main/tt1chall2.java)
+- Made use of enhanced for loops
+{% highlight java %}
+for(int num : qa) { q1.push(num); }
+for(int num : qb) { q2.push(num); }
+{% endhighlight %}
+
+- Used robust and state-of-the-art technology to create an algorithm to display the numbers in the required format
+{% highlight java %}
+while((q1.display() != null) || (q2.display() != null)) {
+    try {
+        if((q1.peak() < q2.peak()))  {
+            o.push(q1.peak());
+            q1.pop();
+        }
+        else if((q2.peak()) < q1.peak() || ((q1.peak()) == null) || (q2.peak() == null)) {
+            o.push(q2.peak());
+            q2.pop();
+        }
+    } catch (Exception e) {
+        if(q1.peak() == null) {
+            o.push(q2.peak());
+            q2.pop();
+            break;
+        }
+        else if(q2.peak() == null) {
+            o.push(q1.peak());
+            q1.pop();
+            break;
+        }
+    }
+}
+{% endhighlight %}
+
+
+[Challenge 3](https://github.com/Akshay-Rohatgi/AP-CSA-T3/blob/main/tt1chall3.java)
+- Pretty simple compared to the other two challenges, code below:
+{% highlight java %}
+
+List<Integer> og = Arrays.asList(1, 2, 3, 4);
+
+Queue<Integer> ne_w = new Queue<>();
+
+for(int n : og ) { ne_w.push(n); }
+
+
+Stack<Integer> fin = new Stack<>();
+
+int m = ne_w.length();
+
+for(int i = 0; i < m; i++) {
+    fin.add(ne_w.peak());
+    ne_w.pop();
+}
+
+ArrayList<Integer> changed = new ArrayList<Integer>();
+
+int r = fin.length();
+for(int i = 0; i < r; i++) {
+    changed.add(fin.peak());
+    fin.pop();
+}
+
+System.out.println("Before: " + og.toString().replaceAll("\\]", "").replaceAll("\\[", "").replaceAll(" "," ").replaceAll(",", " "));
+
+System.out.println("After: " + changed.toString().replaceAll("\\]", "").replaceAll("\\[", "").replaceAll(" "," ").replaceAll(",", " "));
+{% endhighlight %}
+
