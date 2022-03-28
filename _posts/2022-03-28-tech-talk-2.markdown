@@ -1,0 +1,117 @@
+---
+layout: post
+title:  "Tech Talk 2 Takeaways"
+categories: jekyll update
+---
+
+In the Tech Talk 2 challenge I was able to use Stacks practically in the form of a calculator:
+
+Sort of tokenized items with reverse polish notation
+{% highlight java %}
+Stack<String> tokenStack = new Stack<String>();
+for (String token : tokens) {
+    switch (token) {
+        // If left bracket push token on to stack
+        case "(":
+            tokenStack.add(token);
+            break;
+        case ")":
+            while (tokenStack.peak() != null && !tokenStack.peak().equals("("))
+            {
+                reverse_polish.add( (String)tokenStack.pop() );
+            }
+            tokenStack.pop();
+            break;
+        case "+":
+        case "-":
+        case "*":
+        case "/":
+        case "%":
+            // While stack
+            // not empty AND stack top element
+            // and is an operator
+            while (tokenStack.peak() != null && isOperator(tokenStack.peak()))
+            {
+                if ( isPrecedent(token, (String) tokenStack.peak() )) {
+                    reverse_polish.add((String)tokenStack.pop());
+                    continue;
+                }
+                break;
+            }
+            // Push the new operator on the stack
+            tokenStack.add(token);
+            break;
+        default:    // Default should be a number, there could be test here
+            this.reverse_polish.add(token);
+    }
+}
+{% endhighlight %}
+
+I had to write my own small method to verify numbers for result calculation algorithm
+{% highlight java %}
+
+    public boolean checkIfNum(String item) {
+        try {
+            int intValue = Integer.parseInt(item);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+{% endhighlight %}
+
+
+Actual written out `rpnToResult` method
+{% highlight java %}
+private void rpnToResult()
+{
+    int a;
+    int b;
+    double c;
+    double res;
+    // Stack used to hold calculation while process RPN
+    Stack calculation = new Stack();
+
+    for ( int i = 0; i < reverse_polish.size(); i++)
+    {
+        if (checkIfNum(reverse_polish.get(i)))
+        {
+            calculation.add(reverse_polish.get(i));
+        }
+        else
+        {
+            // Pop the two top entries
+            a = (Integer) calculation.pop();
+            b = (Integer) calculation.pop();
+
+            // Based off of Token operator calculate result
+
+            switch ( (String) reverse_polish.get(i)) {
+                // If left bracket push token on to stack
+                case "(":
+                case ")":
+                    calculation.add(a);
+                    calculation.add(b);
+                    break;
+                case "+":
+                    c = a + b;
+                    calculation.add(r);
+                case "-":
+                    c = a - b;
+                    calculation.add(r);
+                case "*":
+                    c = a * b;
+                    calculation.add(r);
+                case "/":
+                    c = a/b;
+                    calculation.add(r);
+                default:
+                    calculation.add(a);
+                    calculation.add(b);
+            }
+
+        }
+    }
+    res = (Double) calculation.pop();
+}
+{% endhighlight %}
