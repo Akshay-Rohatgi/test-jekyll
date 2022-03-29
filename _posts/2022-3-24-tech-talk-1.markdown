@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Tech Talk 2 Takeaways"
+title:  "Tech Talk 1 Takeaways"
 categories: jekyll update
 ---
 
