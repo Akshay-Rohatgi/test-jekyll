@@ -7,6 +7,7 @@ categories: jekyll update
 ## Bubble Sort
 - Utilized simple bubble sort algorithm, all sorted back into the same `input` array
 - Iteration using `j` and `i` for indexes and usage of `temp` as temporary variable
+- Complexity: `O(n^2)`
 
 --
 <br>
@@ -34,6 +35,7 @@ void sort() {
 ## Selection Sort
 - Selection sort algorithm, used seperate method for swapping variables to ensure cleanliness and organization of code
 - Iteration using `j` and `i` for indexes again and usage of `temp`, `a`, `b` as temporary variables
+- Complexity: `O(n^2)`
 
 --
 <br>
@@ -72,6 +74,7 @@ public void swap(int s,int d){
 ## Insertion Sort
 - Insertion sort algorithm, relatively small and easy to implement. Only took up about ~20 lines of code for actual sorting algorithm. 
 - Iteration using `k` and `j` for indexes again and usage of `temp` as temporary variablee
+- Complexity: `O(n)`
 
 --
 <br>
@@ -97,6 +100,7 @@ void sort() {
 - Created temporary arrays hold some information during each sort, `L[]` and `R[]`
 - `l` for minimum index, `m` for maximum index, `r` is needed when merging sorted halves at the very end, can be seen with code and respective comments
 - most of the code is explained by looking through the comments. 
+- Complexity: `O(nLogn)`
 
 --
 <br>
