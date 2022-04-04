@@ -7,16 +7,17 @@ categories: jekyll update
 All sorts can be executed with (5000) random integers, 12 times with one simple menu option
 
 
-`Final Output:`
+`Final Data:`
 
 | Sort              | Bubble     | Insertion  | Merge      | Selection  |
 |-------------------|------------|------------|------------|------------|
+| Complexity        | O(n^2)     | O(n)       | O(nLogn)   | O(n^2)     |
 | Average Random    | 2499       | 2485       | 2502       | 2506       |
 | Total Nanoseconds | 1318255200 | 295881400  | 31078100   | 212811900  |
 | Total Seconds     | 1.3182552  | 0.2958814  | 0.0310781  | 0.2128119  |
 
 **Conclusion**:
-Clearly it can be seen that the average random number was about the same for all sorts, so most likely no worried there. All sorts EXCEPT for Bubble seemed to take around ~30 seconds. Bubble going for `1.3182552 seconds` and Selection going for `0.2128119` seconds. Selection sort was one of the less complex sort implementations, but seemed to yield the most promising results. While my implementation utilized a multitude of variables and methods, it can be cleaned up to become slightly more efficient. Selection outpreformed the next fastest sort by about ~8 seconds. With the current data, it can be reasonably assumed that Selection sort is the best approach to tasks similar to the ones assigned in this tech talk. I will share my results with my study group next class to check if my data is an outlier, or if multiple people reached the same conclusion with their work. 
+Clearly it can be seen that the average random number was about the same for all sorts, so most likely no worried there. All sorts EXCEPT for Bubble and Merge seemed to take around ~30 seconds. Bubble going for `1.3182552 seconds` and Merge going for `0.0310781` seconds. Merge sort was one of the more complex sort implementations, but seemed to yield the most promising results. While my implementation utilized a multitude of variables and methods, it can be cleaned up to become slightly more efficient. Merge outpreformed the next fastest sort by about ~0.2648033 seconds. Even when looking at big O complexity, it seems that in the worst case scenario the merge sort will be faster. With the current data, it can be reasonably assumed that Merge sort is the best approach to tasks similar to the ones assigned in this tech talk. I will share my results with my study group next class to check if my data is an outlier, or if multiple people reached the same conclusion with their work. 
 
 `Program Output:`
 ```R
