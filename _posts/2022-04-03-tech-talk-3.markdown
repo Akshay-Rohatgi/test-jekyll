@@ -1,0 +1,169 @@
+---
+layout: post
+title:  "Tech Talk 3 [Sort Implementations]"
+categories: jekyll update
+---
+
+## Bubble Sort
+- Utilized simple bubble sort algorithm, all sorted back into the same `input` array
+- Iteration using `j` and `i` for indexes and usage of `temp` as temporary variable
+
+--
+<br>
+
+`BubbleSorts.java`
+
+```java
+void sort() {
+    int temp;
+    for (int i=0; i< input.size(); i++){
+        for(int j= i; j< input.size()-1; j++){
+            int first = input.get(i);
+            int sec = input.get(j + 1);
+            if (first > sec)  {
+                temp = input.get(j + 1);
+                input.set(j + 1, input.get(i));
+                input.set(i, temp);
+            }
+        }
+        list.add(input.get(i));
+    }
+}
+```
+
+## Selection Sort
+- Selection sort algorithm, used seperate method for swapping variables to ensure cleanliness and organization of code
+- Iteration using `j` and `i` for indexes again and usage of `temp`, `a`, `b` as temporary variables
+
+--
+<br>
+
+`SelectionSorts.java`
+
+```java
+void sort(){
+
+    int a = 0;
+    int j=0;
+    int b = 0;
+
+    for(int i=1;i<input.size();i++){
+
+        a = input.get(i-1);
+        b = i-1;
+
+        for(j=i;j<input.size();j++){
+            if(input.get(j)<a){
+                a = input.get(j);
+                b = j;
+            }
+        }
+
+        swap(i-1, b);
+    }
+}
+
+public void swap(int s,int d){
+    int temp = input.get(d);
+    input.set(d, input.get(s));
+    input.set(s, temp);
+}
+```
+## Insertion Sort
+- Insertion sort algorithm, relatively small and easy to implement. Only took up about ~20 lines of code for actual sorting algorithm. 
+- Iteration using `k` and `j` for indexes again and usage of `temp` as temporary variablee
+
+--
+<br>
+
+`InsertionSorts.java`
+
+```java
+void sort() {
+    for(int k=1; k<input.size(); k++)   {
+        int temp = input.get(k);
+        int j= k-1;
+        while(j>=0 && temp <= input.get(j))   {
+            input.set(j + 1, input.get(j));
+            j = j-1;
+        }
+        input.set(j + 1, temp);
+    }
+}
+```
+
+## Merge Sort
+- Merge sort algorithm, relatively large and took some time to implement. Originally created this using only arrays, but switched to ArrayLists for compatibility with rest of larger project. 
+- Created temporary arrays hold some information during each sort, `L[]` and `R[]`
+- `l` for minimum index, `m` for maximum index, `r` is needed when merging sorted halves at the very end, can be seen with code and respective comments
+- most of the code is explained by looking through the comments. 
+
+--
+<br>
+
+`MergeSorts.java`
+
+```java
+void merge(ArrayList<Integer> arr, int l, int m, int r) {
+    // size
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    // temp to hold info during sorts
+    int L[] = new int [n1];
+    int R[] = new int [n2];
+
+    // copy
+    for (int i=0; i<n1; ++i)
+        L[i] = arr.get(l + i);
+    for (int j=0; j<n2; ++j)
+        R[j] = arr.get(m + 1 + j);
+
+
+    // merge
+
+    int i = 0, j = 0;
+
+    int k = l;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr.set(k, L[i]);
+            i++;
+        }
+        else {
+            arr.set(k, R[j]);
+            j++;
+        }
+        k++;
+    }
+
+    // copy last few elements of l
+    while (i < n1) {
+        arr.set(k, L[i]);
+        i++;
+        k++;
+    }
+
+    // copy last few elements of r
+    while (j < n2) {
+        arr.set(k, R[j]);
+        j++;
+        k++;
+    }
+}
+
+// Main function that sorts using merge()
+void sort(ArrayList<Integer> arr, int l, int r) {
+    if (l < r) {
+        // Find the middle point
+        int m = (l+r)/2;
+
+        // Sort first and second halves
+        sort(arr, l, m);
+        sort(arr , m+1, r);
+
+        // Merge the sorted halves
+        merge(arr, l, m, r);
+    }
+}
+```
