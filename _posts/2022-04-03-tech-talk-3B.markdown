@@ -1,0 +1,52 @@
+---
+layout: post
+title:  "Tech Talk 3 [Overall Sort Implementation]"
+categories: jekyll update
+---
+
+All sorts can be executed with (5000) random integers, 12 times with one simple menu option
+
+`Example Output:`
+```R
+-------------------------
+Choose from these choices
+-------------------------
+
+1 : HelloWorld
+2 : Matrix
+3 : IntByReference
+4 : Tech Talk 1, Challenge 1
+5 : Tech Talk 1 Challenge 2
+6 : Tech Talk 1, Challenge 3
+7 : Calculator
+8 : Runs all sorts (with analytics)
+num> 8
+--------------------------
+---BUBBLE SORT RESULTS---
+--------------------------
+Average random: 2499
+Total Nanoseconds: 1318255200
+Total Seconds: 1.3182552
+--------------------------
+--------------------------
+--INSERTION SORT RESULTS--
+--------------------------
+Average random: 2485
+Total Nanoseconds: 295881400
+Total Seconds: 0.2958814
+--------------------------
+--------------------------
+----MERGE SORT RESULTS----
+--------------------------
+Average random: 2502
+Total Nanoseconds: 31078100
+Total Seconds: 0.0310781
+--------------------------
+--------------------------
+--SELECTION SORT RESULTS--
+--------------------------
+Average random: 2506
+Total Nanoseconds: 212811900
+Total Seconds: 0.2128119
+--------------------------
+```
