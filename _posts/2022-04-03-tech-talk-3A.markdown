@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Tech Talk 3 [Sort Implementations]"
+title:  "Tech Talk 3 [Individual Sort Implementations]"
 categories: jekyll update
 ---
 
