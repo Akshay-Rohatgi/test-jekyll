@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "2015 MCQ Corrections"
+categories: jekyll update
+---
+
+| Q# | Reasoning                |
+|----|--------------------------|
+| 3  | I chose E because I thought @Override notation was mandatory, turns out its not|
+| 6  | "similar" + "today" becomes "sdimil**art**oday, leading to false positive |
+| 9  | Calculating random numbers should look like: `int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);`, so here I needed to add the 2, to account for that min. 2 = 1*2 |
+| 18 | 404/10 = 40 --> 40 * 10 = 400 --> 400 + 1 --> 401 |
+| 25 | Iteration 0: +4; Iteration 1: +3; Iteration 2: +2; Iteration 3: +1; count=10 |
+| 26 | Pass by value // Pass by reference // In-class discussion covered this question|
+| 27 | Only completed sort halfway at the point when j=2 |
+| 28 | executes for `< data.length=6` for assign to temp,  `k=j+1`; Answer B? |
+| 30 | II only, basic IF statement, just walk yourself through it |
+| 31 | Should be D, just walk through iterations carefully |
+| 32 | **A** doesn't use the method correctly, **C** doesnt use getMajor(), **D** cannot be used because enhanced for loop, **E** does not call method correctly. |
+| 34 | Answer is D, again walk through iterations carefully and look at conditiional answers |
+| 35 | `while 0 <= 7; int mid = (7)/2 {3}; if 8 < data[3] {4} XXX; if 8 > data[3] {4}; start= 3+1; so now we are at 5 which is the answer` |
+| 36 | `2000/2=1000; 1000/2 = 500 [2]; 500/2; 250/2; 125/2; 62/2; 31/2=15; 15/2; 7/2; 3/2; 1/2 LAST (11);` | 
+| 37 | II and III, first one substracts k and 1 for some reason from the words.length index |
+| 38 | `numVals` is `nums.length`, checking for `v` in `nums`, return `k` (count) if length is 1 of dataset, 
+| 39 | Walk through iteration, first like will be `Alex Bob Carl` with second line being `Alex Alex Alex`, keep in mind that it is `System.out.print` rather than `System.out.println` |
