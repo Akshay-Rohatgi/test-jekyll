@@ -11,7 +11,7 @@ categories: jekyll update
 | 6 | Casts apply to the first value in the definition, so in `i = (double) 2 / 4 + 3` the cast applies to 2, making it 2.0; Then that leads to the expression becoming 0.5 + 3. |
 | 7 | First clause b1 retains true if between 0 to 100; Else clause, b1 retains true if less than -100. This boolean expression does the same: `boolean b2 = (num < -100) || (num > 0 && num < 100);`|
 | 11 | Loop will still go through when num == 1; meaning that num becomes 0 after `num--` and it will print `0` |
-| 13 | !(a && b) || c, by DeMorgans law: `!a || !b || c` |
+| 13 | `!(a && b) || c`, by DeMorgans law: `!a || !b || c` |
 | 14 | Read the answer choices wrong, didn't realize the last option was `returning` the string, I thought it was just still assigning the string to the variable, in which case it would be overwritten and return the wrong output.  |
 | 16 | There was a recursive call to itself right before it ran through the loop, I misinterpreted it as just a decrement. So it would fully decrement itself before running through all the loops that were "backed up".  |
 | 21 | Worked out iterations: [link](https://pastebin.com/rh1mgztA) |
